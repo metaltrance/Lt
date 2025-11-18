@@ -2,117 +2,109 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LibreTek - Tecnología Libre para Pagos y Logística en Paraguay</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>LibreTek</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
 
-* { margin:0; padding:0; box-sizing:border-box; }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-body {
-  font-family: 'Orbitron', monospace;
-  background: linear-gradient(135deg, #0038A8 0%, #D91023 50%, #FFFFFF 100%);
-  background-attachment: fixed;
-  color: #FFFFFF;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden; /* evita cualquier scroll innecesario */
+body{
+  font-family:'Orbitron',monospace;
+  background:linear-gradient(135deg,#0038A8 0%,#D91023 50%,#FFFFFF 100%);
+  background-attachment:fixed;
+  color:#FFF;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;               /* bloquea scroll total */
 }
 
-.dam-bg {
-  position: fixed;
-  inset: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dam" patternUnits="userSpaceOnUse" width="200" height="200"><rect width="200" height="200" fill="%23FFFFFF" opacity="0.05"/><path d="M0 50 L100 50 L100 0 Z" fill="%230038A8" opacity="0.3"/><path d="M0 50 Q50 30 100 50" stroke="%23D91023" stroke-width="2" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23dam)"/></svg>') repeat;
-  opacity: 0.3;
-  z-index: -1;
+.dam-bg{
+  position:fixed;
+  inset:0;
+  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dam" patternUnits="userSpaceOnUse" width="200" height="200"><rect width="200" height="200" fill="%23FFFFFF" opacity="0.05"/><path d="M0 50 L100 50 L100 0 Z" fill="%230038A8" opacity="0.3"/><path d="M0 50 Q50 30 100 50" stroke="%23D91023" stroke-width="2" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23dam)"/></svg>') repeat;
+  opacity:0.3;
+  z-index:-1;
 }
 
-/* HERO ULTRA-COMPACTO */
-.hero {
-  flex: none;                  /* ya no crece innecesariamente */
-  padding: 2.5rem 1.5rem 1.5rem;
-  text-align: center;
+.hero{
+  padding:1.5rem 1rem 0.5rem;
+  text-align:center;
+  flex-shrink:0;
 }
 
-.hero h1 {
-  font-size: clamp(2.8rem, 9vw, 4.5rem);
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-shadow: 0 0 15px #0038A8;
-  margin-bottom: 0.4rem;
-  animation: glow 2s ease-in-out infinite alternate;
+.hero h1{
+  font-size:clamp(2.2rem,10vw,3.8rem);
+  font-weight:900;
+  letter-spacing:0.05em;
+  text-shadow:0 0 12px #0038A8;
+  margin-bottom:0.2rem;
+  animation:glow 2s ease-in-out infinite alternate;
 }
 
-@keyframes glow {
-  from { text-shadow: 0 0 15px #0038A8; }
-  to { text-shadow: 0 0 15px #D91023; }
+@keyframes glow{
+  from{text-shadow:0 0 12px #0038A8;}
+  to{text-shadow:0 0 12px #D91023;}
 }
 
-.hero p {
-  font-size: clamp(1.15rem, 4vw, 1.5rem);
-  margin-bottom: 1rem;
-  opacity: 0.95;
+.hero p{
+  font-size:clamp(1rem,3.8vw,1.3rem);
+  margin-bottom:0.8rem;
+  opacity:0.95;
 }
 
-.cta {
-  background: linear-gradient(45deg, #D91023, #0038A8);
-  border: none;
-  padding: 0.85rem 2rem;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #FFF;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: transform 0.3s;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+.cta{
+  background:linear-gradient(45deg,#D91023,#0038A8);
+  border:none;
+  padding:0.7rem 1.8rem;
+  font-size:1.05rem;
+  font-weight:700;
+  color:#FFF;
+  border-radius:50px;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4);
 }
 
-.cta:hover { transform: scale(1.1); }
-
-/* FEATURES MÁS COMPACTAS Y SIEMPRE VISIBLES */
-.features {
-  flex: 1;                     /* ocupa el espacio restante */
-  padding: 1rem 1.2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-content: start;        /* evita espacio extra arriba */
+.features{
+  flex:1;
+  padding:0.8rem 1rem;
+  display:grid;
+  grid-template-columns:1fr;               /* siempre 1 columna en móvil */
+  gap:0.9rem;
+  overflow:hidden;
 }
 
-/* En tablets y móviles: una sola columna */
-@media (max-width: 900px) {
-  .features { grid-template-columns: 1fr; }
+@media (min-width:700px){
+  .features{grid-template-columns:repeat(3,1fr);}
 }
 
-.feature {
-  background: rgba(255,255,255,0.12);
-  padding: 1.3rem 1.2rem;
-  border-radius: 14px;
-  text-align: center;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.25);
+.feature{
+  background:rgba(255,255,255,0.13);
+  padding:1rem 0.9rem;
+  border-radius:12px;
+  text-align:center;
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,0.25);
 }
 
-.feature h3 {
-  font-size: 1.35rem;
-  margin-bottom: 0.5rem;
-  color: #D91023;
+.feature h3{
+  font-size:1.25rem;
+  margin-bottom:0.4rem;
+  color:#D91023;
 }
 
-.feature p {
-  font-size: 0.98rem;
-  line-height: 1.45;
+.feature p{
+  font-size:0.92rem;
+  line-height:1.35;
 }
 
-footer {
-  flex: none;
-  text-align: center;
-  padding: 1rem;
-  background: rgba(0,0,0,0.5);
-  font-size: 0.9rem;
+footer{
+  flex-shrink:0;
+  text-align:center;
+  padding:0.7rem;
+  background:rgba(0,0,0,0.5);
+  font-size:0.85rem;
 }
 </style>
 </head>
@@ -129,20 +121,20 @@ footer {
 <section class="features">
   <div class="feature">
     <h3>Transacciones Fluidas</h3>
-    <p>Procesos electrónicos optimizados por la abundancia energética de Paraguay. Eficiencia sin límites.</p>
+    <p>Procesos electrónicos optimizados por la abundancia energética de Paraguay.</p>
   </div>
   <div class="feature">
     <h3>Logística Integrada</h3>
-    <p>Soluciones seamless que conectan merchants con redes globales aprovechando nuestra energía.</p>
+    <p>Soluciones que conectan merchants con redes globales aprovechando nuestra energía.</p>
   </div>
   <div class="feature">
     <h3>Energía Abundante</h3>
-    <p>Plataforma 100% impulsada por Itaipú y Yacyretá: sostenible, escalable y paraguaya.</p>
+    <p>100% impulsada por Itaipú y Yacyretá: sostenible y escalable.</p>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 LibreTek. Tecnología libre, Paraguay en movimiento.</p>
+  <p>© 2025 LibreTek • Paraguay en movimiento</p>
 </footer>
 
 </body>
