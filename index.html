@@ -17,7 +17,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden; /* evita cualquier scroll innecesario */
 }
 
 .dam-bg {
@@ -28,23 +28,19 @@ body {
   z-index: -1;
 }
 
+/* HERO ULTRA-COMPACTO */
 .hero {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex: none;                  /* ya no crece innecesariamente */
+  padding: 2.5rem 1.5rem 1.5rem;
   text-align: center;
-  padding: 2rem 1.5rem;
-  max-height: 60vh;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 8vw, 4rem);  /* se adapta perfectamente */
+  font-size: clamp(2.8rem, 9vw, 4.5rem);
   font-weight: 900;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-shadow: 0 0 15px #0038A8;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
   animation: glow 2s ease-in-out infinite alternate;
 }
 
@@ -54,17 +50,16 @@ body {
 }
 
 .hero p {
-  font-size: clamp(1.1rem, 4vw, 1.4rem);
-  margin-bottom: 1.8rem;
+  font-size: clamp(1.15rem, 4vw, 1.5rem);
+  margin-bottom: 1rem;
   opacity: 0.95;
-  max-width: 90%;
 }
 
 .cta {
   background: linear-gradient(45deg, #D91023, #0038A8);
   border: none;
-  padding: 0.9rem 2.2rem;
-  font-size: 1.1rem;
+  padding: 0.85rem 2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: #FFF;
   border-radius: 50px;
@@ -75,61 +70,49 @@ body {
 
 .cta:hover { transform: scale(1.1); }
 
-/* ===== SECCIÓN FEATURES TOTALMENTE RESPONSIVE ===== */
+/* FEATURES MÁS COMPACTAS Y SIEMPRE VISIBLES */
 .features {
-  padding: 3rem 1.5rem 2rem;
+  flex: 1;                     /* ocupa el espacio restante */
+  padding: 1rem 1.2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* clave de la responsividad */
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
+  align-content: start;        /* evita espacio extra arriba */
 }
 
-/* En pantallas muy pequeñas fuerza una sola columna */
-@media (max-width: 600px) {
-  .features {
-    grid-template-columns: 1fr;
-    padding: 2.5rem 1rem;
-    gap: 1.8rem;
-  }
+/* En tablets y móviles: una sola columna */
+@media (max-width: 900px) {
+  .features { grid-template-columns: 1fr; }
 }
 
 .feature {
   background: rgba(255,255,255,0.12);
-  padding: 1.8rem 1.4rem;
+  padding: 1.3rem 1.2rem;
   border-radius: 14px;
   text-align: center;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.25);
-  transition: transform 0.3s;
-}
-
-.feature:hover {
-  transform: translateY(-8px);
 }
 
 .feature h3 {
-  font-size: 1.45rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
   color: #D91023;
 }
 
 .feature p {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 0.98rem;
+  line-height: 1.45;
 }
 
 footer {
+  flex: none;
   text-align: center;
-  padding: 1.4rem;
+  padding: 1rem;
   background: rgba(0,0,0,0.5);
   font-size: 0.9rem;
-}
-
-/* Pequeños ajustes móviles */
-@media (max-width: 480px) {
-  .hero { padding: 1.5rem 1rem; }
-  .cta { padding: 0.8rem 1.8rem; font-size: 1rem; }
 }
 </style>
 </head>
