@@ -68,37 +68,44 @@ body{
 
 .cta:hover{transform:scale(1.1);}
 
+/* ←←← AQUÍ ESTÁ EL FIX PERFECTO →→→ */
 .features{
   flex:1;
-  padding:2rem 1.5rem;
+  padding:1.5rem 1rem;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1.8rem;
+  gap:1.4rem;
   max-width:1200px;
   margin:0 auto;
 }
 
+/* Fuerza 1 columna en pantallas angostas (móviles y tablets verticales) */
+@media (max-width:700px){
+  .features{
+    grid-template-columns:1fr;
+    padding:1.5rem 1.2rem;
+    gap:1.3rem;
+  }
+}
+
 .feature{
   background:rgba(255,255,255,0.13);
-  padding:1.8rem 1.4rem;
+  padding:1.3rem 1.2rem;   /* reducido para que no sean "largas" */
   border-radius:14px;
   text-align:center;
   backdrop-filter:blur(10px);
   border:1px solid rgba(255,255,255,0.25);
-  transition:transform .3s;
 }
 
-.feature:hover{transform:translateY(-8px);}
-
 .feature h3{
-  font-size:1.4rem;
-  margin-bottom:0.7rem;
+  font-size:1.35rem;
+  margin-bottom:0.5rem;
   color:#D91023;
 }
 
 .feature p{
-  font-size:1rem;
-  line-height:1.5;
+  font-size:0.98rem;
+  line-height:1.45;
 }
 
 footer{
@@ -123,15 +130,15 @@ footer{
 <section class="features">
   <div class="feature">
     <h3>Transacciones Fluidas</h3>
-    <p>Procesos electrónicos optimizados por la abundancia energética de Paraguay. Eficiencia sin límites.</p>
+    <p>Procesos electrónicos optimizados por la abundancia energética de Paraguay.</p>
   </div>
   <div class="feature">
     <h3>Logística Integrada</h3>
-    <p>Soluciones seamless que conectan merchants con redes globales aprovechando nuestra energía.</p>
+    <p>Conexión seamless de merchants con redes globales usando nuestra energía.</p>
   </div>
   <div class="feature">
     <h3>Energía Abundante</h3>
-    <p>Plataforma 100% impulsada por Itaipú y Yacyretá: sostenible, escalable y paraguaya.</p>
+    <p>100% impulsada por Itaipú y Yacyretá: sostenible y escalable.</p>
   </div>
 </section>
 
