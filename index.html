@@ -68,29 +68,51 @@ body{
 
 .cta:hover{transform:scale(1.1);}
 
-/* ←←← AQUÍ ESTÁ EL FIX PERFECTO →→→ */
 .features{
   flex:1;
-  padding:1.5rem 1rem;
+  padding:2rem 1.5rem 1.5rem;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:1.4rem;
+  gap:1.6rem;
   max-width:1200px;
   margin:0 auto;
 }
 
-/* Fuerza 1 columna en pantallas angostas (móviles y tablets verticales) */
-@media (max-width:700px){
-  .features{
-    grid-template-columns:1fr;
-    padding:1.5rem 1.2rem;
-    gap:1.3rem;
+/* ←←← FIX PARA TABLETS Y MÓVILES →→→ */
+@media (max-width:1024px) {
+  .features {
+    grid-template-columns: 1fr;           /* 1 sola columna en tablets y móviles */
+    padding:1.8rem 1.2rem;
+    gap:1.2rem;
   }
+  
+  .feature {
+    padding:1rem 1.2rem !important;       /* cajas súper cortas */
+  }
+  
+  .feature h3 {
+    font-size:1.3rem !important;
+    margin-bottom:0.4rem !important;
+  }
+  
+  .feature p {
+    font-size:0.95rem !important;
+    line-height:1.4 !important;
+  }
+}
+
+/* En escritorio vuelve a 3 columnas normales */
+@media (min-width:1025px) {
+  .feature {
+    padding:1.8rem 1.4rem;
+  }
+  .feature h3 {font-size:1.4rem;}
+  .feature p {font-size:1rem; line-height:1.5;}
 }
 
 .feature{
   background:rgba(255,255,255,0.13);
-  padding:1.3rem 1.2rem;   /* reducido para que no sean "largas" */
+  padding:1.8rem 1.4rem;
   border-radius:14px;
   text-align:center;
   backdrop-filter:blur(10px);
@@ -98,14 +120,14 @@ body{
 }
 
 .feature h3{
-  font-size:1.35rem;
-  margin-bottom:0.5rem;
+  font-size:1.4rem;
+  margin-bottom:0.7rem;
   color:#D91023;
 }
 
 .feature p{
-  font-size:0.98rem;
-  line-height:1.45;
+  font-size:1rem;
+  line-height:1.5;
 }
 
 footer{
@@ -130,15 +152,15 @@ footer{
 <section class="features">
   <div class="feature">
     <h3>Transacciones Fluidas</h3>
-    <p>Procesos electrónicos optimizados por la abundancia energética de Paraguay.</p>
+    <p>Procesos optimizados con energía abundante paraguaya.</p>
   </div>
   <div class="feature">
     <h3>Logística Integrada</h3>
-    <p>Conexión seamless de merchants con redes globales usando nuestra energía.</p>
+    <p>Conexión directa merchants ↔ redes globales.</p>
   </div>
   <div class="feature">
     <h3>Energía Abundante</h3>
-    <p>100% impulsada por Itaipú y Yacyretá: sostenible y escalable.</p>
+    <p>100% Itaipú + Yacyretá. Sostenible y escalable.</p>
   </div>
 </section>
 
