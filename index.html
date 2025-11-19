@@ -11,7 +11,7 @@
 
 body{
   font-family:'Orbitron',monospace;
-  background:linear-gradient(135deg,#0038A8 0%,#0000FF 50%,#FFFFFF 100%);
+  background:linear-gradient(135deg,#D91023 0%,#FF6F61 50%,#FFE066 100%);
   background-attachment:fixed;
   color:#FFF;
   min-height:100vh;
@@ -22,7 +22,7 @@ body{
 .dam-bg{
   position:fixed;
   inset:0;
-  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dam" patternUnits="userSpaceOnUse" width="200" height="200"><rect width="200" height="200" fill="%23FFFFFF" opacity="0.05"/><path d="M0 50 L100 50 L100 0 Z" fill="%230038A8" opacity="0.3"/><path d="M0 50 Q50 30 100 50" stroke="%230000FF" stroke-width="2" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23dam)"/></svg>') repeat;
+  background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dam" patternUnits="userSpaceOnUse" width="200" height="200"><rect width="200" height="200" fill="%23FFFFFF" opacity="0.05"/><path d="M0 50 L100 50 L100 0 Z" fill="%23D91023" opacity="0.3"/><path d="M0 50 Q50 30 100 50" stroke="%23FF6F61" stroke-width="2" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23dam)"/></svg>') repeat;
   opacity:0.3;
   z-index:-1;
 }
@@ -37,14 +37,14 @@ body{
   font-size:clamp(2.8rem,10vw,4.5rem);
   font-weight:900;
   letter-spacing:0.08em;
-  text-shadow:0 0 15px #0038A8;
+  text-shadow:0 0 15px #D91023;
   margin-bottom:0.5rem;
   animation:glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes glow{
-  from{text-shadow:0 0 15px #0038A8;}
-  to{text-shadow:0 0 15px #0000FF;}
+  from{text-shadow:0 0 15px #D91023;}
+  to{text-shadow:0 0 15px #FF6F61;}
 }
 
 .hero p{
@@ -53,7 +53,7 @@ body{
 }
 
 .cta-button{
-  background-color:#0038A8;
+  background-color:#D91023;
   color:#FFF;
   padding:1rem 2rem;
   border:none;
@@ -64,6 +64,6 @@ body{
 }
 
 .cta-button:hover{
-  background-color:#0000FF;
+  background-color:#FF6F61;
 }
 </style>
